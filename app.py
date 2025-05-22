@@ -93,16 +93,3 @@ if submit:
 # Divider
 st.markdown("---")
 
-# 3. ⏳ Countdown Timer
-st.subheader("Countdown to the Big Day 🎉")
-
-wedding_date = datetime(2025, 4, 12)  # Set your wedding date here
-now = datetime.now()
-days_left = (wedding_date - now).days
-
-if days_left > 0:
-    st.markdown(f"### ⏳ {days_left} days to go!")
-else:
-    st.markdown("### 🎊 The wedding day has arrived or passed!")
-
-
