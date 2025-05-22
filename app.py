@@ -36,12 +36,6 @@ st.markdown("---")
 # This assumes you have your credentials JSON stored in Streamlit secrets as a JSON string
 creds_json = st.secrets["google"]["creds"]
 
-st.write("creds_json:", repr(creds_json))
-
-
-st.text("DEBUG creds_json:")
-st.text(creds_json)
-
 creds_dict = json.loads(creds_json)
 
 # Define scope and create credentials object
