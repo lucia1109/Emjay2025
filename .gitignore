@@ -1,0 +1,22 @@
+# Ignore Google Cloud credentials and sensitive files
+*.json
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+*.env
+
+# OS and IDE-specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+wedding-rsvp-460511-2dc0162ab1d2.json
+secrets.toml
+.streamlit
