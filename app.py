@@ -27,7 +27,7 @@ st.markdown(hide_style, unsafe_allow_html=True)
 # 1. 📸 Landing Page
 st.markdown("<h1 style='text-align: center;'>You're Invited!</h1>", unsafe_allow_html=True)
 image = Image.open("assets/invite.jpg")
-st.image(image, use_column_width=True)
+st.image(image, use_container_width=True)
 
 # Divider
 st.markdown("---")
