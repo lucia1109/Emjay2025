@@ -50,12 +50,15 @@ gc = gspread.authorize(credentials)
 sheet = gc.open("Wedding RSVPs").sheet1  
 
 # Email credentials from secrets
-EMAIL_ADDRESS = st.secrets["EMAIL_ADDRESS"]
-EMAIL_PASSWORD = st.secrets["EMAIL_PASSWORD"]
+EMAIL_ADDRESS = st.secrets["email"]["address"]
+EMAIL_PASSWORD = st.secrets["email"]["password"]
 
-def send_confirmation_email(to_email, guest_name):
+def send_confirmation_email(to_email, name):
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        server.starttls()
+        server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
     subject = "Your RSVP Confirmation"
-    body = f"Hi {guest_name},\n\nThank you for your RSVP! We look forward to seeing you at the event.\n\nBest regards,\nThe Wedding Team"
+    body = f"Hi {name},\n\nThank you for your RSVP! We look forward to seeing you at the event.\n\nBest regards,\nThe Wedding Team"
 
     msg = MIMEText(body)
     msg["Subject"] = subject
